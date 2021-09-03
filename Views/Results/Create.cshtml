@@ -1,0 +1,48 @@
+﻿@model SimoSolver.Models.Results
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Results</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="displayString" class="control-label"></label>
+                <input asp-for="displayString" class="form-control" />
+                <span asp-validation-for="displayString" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vehicleData" class="control-label"></label>
+                <input asp-for="vehicleData" class="form-control" />
+                <span asp-validation-for="vehicleData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationsData" class="control-label"></label>
+                <input asp-for="LocationsData" class="form-control" />
+                <span asp-validation-for="LocationsData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OptimizationResult" class="control-label"></label>
+                <input asp-for="OptimizationResult" class="form-control" />
+                <span asp-validation-for="OptimizationResult" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

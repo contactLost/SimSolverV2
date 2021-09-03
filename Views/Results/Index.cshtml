@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SimoSolver.Models.Results>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+<h1>Results</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" style="width: 100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.displayString)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vehicleData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationsData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OptimizationResult)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.displayString)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vehicleData)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocationsData)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OptimizationResult)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

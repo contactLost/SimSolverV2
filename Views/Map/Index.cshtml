@@ -1,0 +1,68 @@
+﻿
+
+@{
+    ViewData["Title"] = "Solver";
+}
+
+<html>
+
+<head>
+    <script src="~/js/ol.js"></script>
+    <link rel="stylesheet" href="~/css/ol.css">
+    <style>
+        .map {
+            height: 600px;
+            max-width: auto;
+            margin-left: -300vw;
+            padding-left: 285vw;
+            margin-right: -300vw;
+            padding-right: 285vw;
+            padding-bottom: 7vh;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h2>Solver</h2>
+
+    <p>Map view of solutions.</p>
+
+    <h2>My Map</h2>
+    <div>
+        <div style="width: auto; float:left">
+            The solution is
+            <p>
+                <span style="white-space: pre-line; ">
+                    @ViewData["solution"]
+                </span>
+
+            </p>
+
+        </div>
+
+        <div style="width: auto; float:left">
+            Locations: 
+            <p>
+                <span style="white-space: pre-line; ">
+                    @ViewData["LocList"]
+                </span>
+
+            </p>
+
+        </div>
+
+
+        <div style="width: 100%; float:right">
+
+            <script src="~/js/openlayers.js" type="module"></script>
+            <div id="map" class="map"></div>
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+

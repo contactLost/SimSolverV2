@@ -1,0 +1,27 @@
+﻿
+@model IEnumerable<SimSolverV2.Models.Locations>
+@{
+    ViewData["Title"] = "Distance Matrix";
+
+    long[,] distanceMatrix = (long[,])ViewData["distanceMatrix"];
+
+
+}
+<body>
+    <h2>Distance Matrix</h2>
+    <div>
+        <table style="width:100%">
+            @{
+                for (int i = 0; i < distanceMatrix.GetLength(0); i++)
+                {
+                    <tr>
+                        @for (int j = 0; j < distanceMatrix.GetLength(1); j++)
+                        {
+                        <th>  @distanceMatrix[i, j] </th>
+                        }
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</body>
